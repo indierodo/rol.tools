@@ -1,0 +1,71 @@
+<Container>
+      <h1>Tirar dados!</h1>
+      <Row>
+      <Col md="2"></Col>
+      <Col>
+        <Form >
+          <Form.Group as={Row}>
+            <Form.Label column sm="6">Necesito superar:</Form.Label>
+            <Col >
+              <Form.Control type="number" min="1" max="20" value={armClass} onChange={(e) => setArmClass(e.target.value)} />
+            </Col>
+          </Form.Group>
+
+          <Form.Group as={Row} >
+            <Form.Label column sm="6">Número de dados:</Form.Label>
+            <Col >
+              <Form.Control type="number" min="1" max="200" value={numDice} onChange={(e) => setNumDice(e.target.value)} />
+            </Col>
+          </Form.Group>
+
+          <Form.Group as={Row}>
+            <Form.Label column sm="6" className="justify-content-end">Selecciona tu dado:</Form.Label>
+            <Col >
+              <Dropdown onSelect={(e) => setDx(e)}>
+                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                  d{dx}
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item eventKey="4">d4</Dropdown.Item>
+                  <Dropdown.Item eventKey="6">d6</Dropdown.Item>
+                  <Dropdown.Item eventKey="8">d8</Dropdown.Item>
+                  <Dropdown.Item eventKey="10">d10</Dropdown.Item>
+                  <Dropdown.Item eventKey="12">d12</Dropdown.Item>
+                  <Dropdown.Item eventKey="20">d20</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </Col>
+          </Form.Group>
+
+
+          <Form.Group as={Row}>
+            <Col sm={{ span: 10, offset: 2 }}>
+              <Form.Check type="checkbox" label="Advantage" checked={advantage} onChange={(e) => setAdvantage(e.target.checked)} />
+              <Form.Check type="checkbox" label="Disadvantage" checked={disadvantage} onChange={(e) => setDisadvantage(e.target.checked)} />
+            </Col>
+          </Form.Group>
+
+          <Button variant="primary" onClick={handleRollDice} >Tirar</Button>
+        </Form>
+      </Col>
+
+      <Col>
+
+          <p>Failed Throws:</p>
+          <p>Fails: {fails}</p>
+
+          <p>Succeeded Throws:</p>
+          <p>Passes: {passes}</p>
+
+
+        <div id="success"></div>
+        <div id="result"></div>
+
+          <div id="success" dangerouslySetInnerHTML={{ __html: success }}></div>
+          <div id="failed" dangerouslySetInnerHTML={{ __html: failed }}></div>
+          <div id="result" dangerouslySetInnerHTML={{ __html: result }}></div>
+
+      </Col>
+      <Col sm="2"></Col>
+      </Row>
+    </Container>

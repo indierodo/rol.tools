@@ -1,0 +1,54 @@
+.npc {
+    background-image: url('../../img/container.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 450px;
+    height: 270px;
+    padding-top: 80px;
+    text-align: center;
+    justify-content: center;
+}
+
+.substract {
+    background-image: url('../../img/substract.png');
+    margin-right: 10px;
+}
+.add {
+    background-image: url('../../img/add.png')!important;
+}
+
+.npc-life-points-button {
+    width: 50px;
+    height: 50px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.npc-life-points-buttons {
+    padding-top: 10px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
+.new-npc {
+    width: 100px;
+}
+
+.destroy-button {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    margin-left: auto;
+    margin-right: 60px;
+    margin-top: -20px;
+    justify-content: right;
+    background-size: 100%;
+    background-image: url('../../img/cross_button_red.png')!important;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}

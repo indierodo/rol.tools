@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="209.97495mm"
+   height="67.778244mm"
+   viewBox="0 0 209.97495 67.778244"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="rocky.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.8318311"
+     inkscape:cx="567.73792"
+     inkscape:cy="108.08857"
+     inkscape:window-width="1865"
+     inkscape:window-height="1031"
+     inkscape:window-x="55"
+     inkscape:window-y="21"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-9.602457,-53.380535)">
+    <path
+       id="rect846"
+       style="fill:#947379;fill-opacity:1;stroke-width:0.93885;stroke-linejoin:round;stroke-opacity:0.08"
+       d="M 13.967942,53.380535 213.52641,57.02577 219.5774,78.650383 216.86287,121.15878 9.602457,118.53489 V 85.612812 Z"
+       sodipodi:nodetypes="ccccccc" />
+  </g>
+</svg>
