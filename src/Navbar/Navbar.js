@@ -16,7 +16,7 @@ function Navbar() {
     <nav className="navbar">
       <div className='logo'>
         <Link to="/" className="navbar-brand">rol.tools</Link>
-        <div onClick={toggleMenu} className='hamburger-button'><img src={hamburgerIcon}></img></div>
+        <div onClick={toggleMenu} className='hamburger-button'><img src={hamburgerIcon} alt='menu'></img></div>
       </div>
       <div className={isOpen ? 'links open' : 'links'}>
         <ul>

@@ -21,7 +21,7 @@ function TirarDados() {
       let roll1 = Math.floor(Math.random() * dx) + 1;
       let roll2 = Math.floor(Math.random() * dx) + 1;
 
-      if (modifier == 'none') {
+      if (modifier === 'none') {
         if (roll1 >= minimumToPass) {
           succesfulThrows.push(roll1)
         } else {
@@ -29,7 +29,7 @@ function TirarDados() {
         }
       } 
       
-      else if (modifier == 'advantage') {
+      else if (modifier === 'advantage') {
         const highestRoll = Math.max(roll1, roll2);
 
         if (highestRoll >= minimumToPass) {
@@ -40,7 +40,7 @@ function TirarDados() {
 
       } 
       
-      else if (modifier == 'disadvantage') {
+      else if (modifier === 'disadvantage') {
         const lowestRoll = Math.min(roll1, roll2);
 
         if (lowestRoll >= minimumToPass) {
@@ -62,7 +62,7 @@ function TirarDados() {
 
     for (let i=0; i < failedThrows.length; i++) {
       results.push(
-        <img src={`images/d${dx}/dice${failedThrows[i]}.png`}/>
+        <img src={`images/d${dx}/dice${failedThrows[i]}.png`} alt={`d${dx} dice${failedThrows[i]}`}/>
       );
     }
 
@@ -72,7 +72,7 @@ function TirarDados() {
 
     for (let i=0; i < succesfulThrows.length; i++) {
       results.push(
-        <img src={`images/d${dx}/dice${succesfulThrows[i]}.png`}/>
+        <img src={`images/d${dx}/dice${succesfulThrows[i]}.png`} alt={`d${dx} dice${succesfulThrows[i]}`}/>
       );
     }
 

@@ -63,6 +63,7 @@ function NPC({ id, onClose }) {
     useEffect(() => {
         load();
         setLoaded(true); // Set loaded flag to true after loading data
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id]);
 
     // Effect to save NPC data to local storage whenever relevant state variables change
@@ -70,6 +71,7 @@ function NPC({ id, onClose }) {
         if (loaded) { // Only save data if it has been loaded from local storage
             save();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [name, armorClass, lifePoints, step, loaded]);
 
     return (
