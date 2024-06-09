@@ -101,13 +101,13 @@ function TirarDados() {
 
     <div className='form-group'>
       <label htmlFor="dx">Número de caras:</label>
-      <select className='text-input' id="dx" onChange={(e) => setDx(e.target.value)}>
+      <select className='text-input' id="dx" defaultValue="20" onChange={(e) => setDx(e.target.value)}>
         <option value="4">d4</option>
         <option value="6">d6</option>
         <option value="8">d8</option>
         <option value="10">d10</option>
         <option value="12">d12</option>
-        <option value="20" selected>d20</option>
+        <option value="20">d20</option>
       </select>
     </div>
 
@@ -121,7 +121,7 @@ function TirarDados() {
         onChange={handleModifierChange}>
 
         </input>
-        <span class="radio"></span>
+        <span className="radio"></span>
       </label>
 
       <label className='option'>Ventaja
@@ -129,7 +129,7 @@ function TirarDados() {
         checked={modifier === 'advantage'}
         onChange={handleModifierChange}
         ></input>
-        <span class="radio"></span>
+        <span className="radio"></span>
       </label>
 
       <label className='option'>Desventaja
@@ -139,7 +139,7 @@ function TirarDados() {
         onChange={handleModifierChange}>
 
         </input>
-        <span class="radio"></span>
+        <span className="radio"></span>
       </label>
 
       </div>
