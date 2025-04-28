@@ -5,7 +5,7 @@
   "type": "module",
   "homepage": "https://rol.tools/",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "start": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
