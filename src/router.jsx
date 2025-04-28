@@ -9,6 +9,7 @@ import TirarDados from "./routes/TirarDados/TirarDados"
 import NPCs from './routes/NPCs/NPCs'
 import CurrencyConverter from './routes/CurrencyConverter/CurrencyConverter';
 import Rules from "./routes/Rules/Rules.jsx";
+import DistanceConverter from "./routes/DistaceConverter/DistanceConverter.jsx";
 
 const Router = () => {
   const router = createHashRouter([
@@ -22,8 +23,9 @@ const Router = () => {
           children: [
             { index: true, element: <TirarDados /> },
             { path: "npc", element: <NPCs /> },
-            { path: "rules", element: <Rules /> },
             { path: "currency-converter", element: <CurrencyConverter /> },
+            { path: "distance-converter", element: <DistanceConverter /> },
+            { path: "rules", element: <Rules /> },
           ],
         },
       ]

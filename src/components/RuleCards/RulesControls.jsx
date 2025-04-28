@@ -12,6 +12,8 @@ const RulesControls = ({ searchText, handleSearchChange, cardsPerPage, handleCar
             <option value={2}>2 por página</option>
             <option value={4}>4 por página</option>
             <option value={6}>6 por página</option>
+            <option value={8}>8 por página</option>
+            <option value={12}>12 por página</option>
         </select>
     </div>
 );

@@ -29,7 +29,10 @@ const Navbar = () => {
             <Link to="/currency-converter">Convertidor de oro</Link>
           </li>
           <li>
-            <Link to="/contact">Calculadora de velocidad</Link>
+            <Link to="/distance-converter">Calculadora de velocidad</Link>
+          </li>
+          <li>
+            <Link to="/rules">Reglas</Link>
           </li>
         </ul>
       </div>

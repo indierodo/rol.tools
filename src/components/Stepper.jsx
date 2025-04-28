@@ -12,7 +12,7 @@ const HorizontalNonLinearStepper = ({steps, activeStep, setActiveStep}) => {
     };
 
     return (
-        <Box sx={{ width: '100%', mt: '10px'}}>
+        <Box sx={{ width: '100%', mt: '30px'}}>
             <Stepper nonLinear activeStep={activeStep}>
                 {steps.map((label, index) => (
                     <Step key={label} completed={completed[index]}>
