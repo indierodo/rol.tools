@@ -1,8 +1,8 @@
-import React from 'react';
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import './NPC.scss'
 
-function NPC({ id, onClose }) {
+const NPC = ({ id, onClose }) => {
 
     const [name, setName] = useState('')
     const [armorClass, setArmorClass] = useState('')
@@ -110,5 +110,10 @@ function NPC({ id, onClose }) {
 
     );
 }
+
+NPC.propTypes = {
+    id: PropTypes.string.isRequired,
+    onClose: PropTypes.func.isRequired,
+};
 
 export default NPC;

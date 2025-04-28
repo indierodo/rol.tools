@@ -1,9 +1,8 @@
-import React from 'react';
 import { useState, useEffect } from 'react';
 import './NPCs.scss'
 import NPC from './NPC'
 
-function NPCs() {
+const NPCs = () => {
   const [npcs, setNpcs] = useState([]);
 
   const addNPC = () => {

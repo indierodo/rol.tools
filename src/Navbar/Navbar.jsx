@@ -1,10 +1,9 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.scss';
 import { useState } from 'react';
 import hamburgerIcon from '../img/hamburger.png';
 
-function Navbar() {
+const Navbar = () => {
 
   const [isOpen, setIsOpen] = useState(false);
 

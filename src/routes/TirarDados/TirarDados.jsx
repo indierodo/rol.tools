@@ -1,8 +1,7 @@
-import React from 'react';
 import { useState } from 'react';
 import './TirarDados.scss'
 
-function TirarDados() {
+const TirarDados = () => {
   const [numDice, setNumDice] = useState(1);
   const [minimumToPass, setMinimumToPass] = useState(10);
   const [dx, setDx] = useState(20);

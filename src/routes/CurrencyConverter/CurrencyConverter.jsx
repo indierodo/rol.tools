@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-function CurrencyConverter() {
-  const [values, setValues] = useState({
-    copper: 100,
-    silver: 10,
-    electrum: 2,
-    gold: 1,
-    platinum: 0.10
+const CurrencyConverter = () => {
+    const [values, setValues] = useState({
+        copper: 100,
+        silver: 10,
+        electrum: 2,
+        gold: 1,
+        platinum: 0.10
 });
 
     const convertCurrency = (currency, value) => {

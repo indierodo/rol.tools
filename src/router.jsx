@@ -1,5 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -10,6 +8,7 @@ import ErrorPage from "./error-page";
 import TirarDados from "./routes/TirarDados/TirarDados"
 import NPCs from './routes/NPCs/NPCs'
 import CurrencyConverter from './routes/CurrencyConverter/CurrencyConverter';
+import Rules from "./routes/Rules/Rules.jsx";
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -23,6 +22,7 @@ const Router = () => {
           children: [
             { index: true, element: <TirarDados /> },
             { path: "npc", element: <NPCs /> },
+            { path: "rules", element: <Rules /> },
             { path: "currency-converter", element: <CurrencyConverter /> },
           ],
         },
