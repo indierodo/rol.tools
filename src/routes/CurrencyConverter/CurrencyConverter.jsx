@@ -1,4 +1,9 @@
 import { useState } from 'react';
+import TextField from '@mui/material/TextField';
+import Grid from '@mui/material/Grid';
+import InputAdornment from '@mui/material/InputAdornment';
+import ImageIcon from '@mui/icons-material/Image'; // Example icon
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 
 const CurrencyConverter = () => {
     const [values, setValues] = useState({
@@ -61,22 +66,57 @@ const CurrencyConverter = () => {
     };
 
     return (
-        <div>
-            <label htmlFor="copper">Copper:</label>
-            <input type="text" id="copper" value={values.copper} onChange={handleChange} />
-
-            <label htmlFor="silver">Silver:</label>
-            <input type="text" id="silver" value={values.silver} onChange={handleChange} />
-
-            <label htmlFor="electrum">Electrum:</label>
-            <input type="text" id="electrum" value={values.electrum} onChange={handleChange} />
-
-            <label htmlFor="gold">Gold:</label>
-            <input type="text" id="gold" value={values.gold} onChange={handleChange} />
-
-            <label htmlFor="platinum">Platinum:</label>
-            <input type="text" id="platinum" value={values.platinum} onChange={handleChange} />
-        </div>
+    <Grid container justifyContent="center" alignItems="center">
+      <Grid>
+        <Grid container spacing={2} direction="column">
+          <Grid item size={12}>
+            <TextField
+              label="Copper"
+              id="copper"
+              value={values.copper}
+              onChange={(e) => handleChange(e, 'copper')}
+              variant="outlined"
+            />
+          </Grid>
+          <Grid item size={12}>
+            <TextField
+              label="Silver"
+              id="silver"
+              value={values.silver}
+              onChange={(e) => handleChange(e, 'silver')}
+              variant="outlined"
+            />
+          </Grid>
+          <Grid item size={12}>
+            <TextField
+              label="Electrum"
+              id="electrum"
+              value={values.electrum}
+              onChange={(e) => handleChange(e, 'electrum')}
+              variant="outlined"
+            />
+          </Grid>
+          <Grid item size={12}>
+            <TextField
+              label="Gold"
+              id="gold"
+              value={values.gold}
+              onChange={(e) => handleChange(e, 'gold')}
+              variant="outlined"
+            />
+          </Grid>
+          <Grid item size={12}>
+            <TextField
+              label="Platinum"
+              id="platinum"
+              value={values.platinum}
+              onChange={(e) => handleChange(e, 'platinum')}
+              variant="outlined"
+            />
+          </Grid>
+        </Grid>
+      </Grid>
+    </Grid>
     );
 }
 

@@ -1,110 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Oldenburg&family=Lato&display=swap');
-
-html {
-    font-size: 18px;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oldenburg';
 }
 
-input, select {
-    font-size: 1rem;
+a {
+    color: #1a1209;
+}
+
+a:visited {
+    color: #402a17;
 }
 
 body {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    background-image: url('background.png');
-    background-position: center;
+    background-image: url("images/ink_forest.png");
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: auto 100%;
-    margin: 0;
-}
-
-h1, h2, h3, h4 {
-    font-family: "Oldenburg", sans-serif!important;
-    padding-top: 1rem;
-    padding-bottom: 1.5rem;
-    text-align: center;
-}
-
-.btn {
-    background-color: transparent!important;
-    border: none;
-    background-image: url('img/button.png');
     background-size: 100%;
-    background-repeat: no-repeat;
-    transition: all 0.2s ease-in-out;
-    min-height: 70px;
-    min-width: 120px;
-    color: #3a2741;
-    font-size: 1.2rem;
-    cursor: pointer;
-    font-family: 'Oldenburg', sans-serif;
-}
-
-.btn-secondary {
-    background-image: url('img/button-secondary.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    color: #3a2741;
-}
-
-
-.btn:hover {
-    filter: brightness(1.2);
-    color: #3a2741;
-}
-
-.form-label {
-    margin-right: 20px;
-}
-
-.form-control:focus, .form-control:hover {
-    filter: brightness(0.9);
-}
-
-.text-input {
-    border: none;
-    background-color: transparent;
-    background-image: url('img/rocky.png');
-    background-size: 100% 90%;
-    background-position: center;
-    background-repeat: no-repeat;
-    text-align: center;
-    transition: all 0.2s ease-in-out;
-    width: 150px;
-    margin-left: 20px;
-    height: 2rem;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-input[type=number]{
-    appearance: textfield;
-    -moz-appearance: textfield;
-}
-
-.form-check-input {
-    background-color: transparent;
-    border: none;
-    background-image: url("img/checkbox_unchecked.png");
-    background-size: 100% 100%;
-    margin: 10px;
-}
-
-.form-check-input:checked {
-    background-image: url("img/checkbox_checked.png");
-}
-
-.form-control, .form-label {
-    width: inherit;
-}
-
-.dropdown {
-    display: inline-block;
-    width: inherit;
+    background-position: bottom;
+    background-attachment: fixed; 
+    min-height: 100vh;
 }
