@@ -42,6 +42,7 @@ const Rules = () => {
 
     return (
         <div>
+            <p style={{color: 'white', margin: '10px'}}>Aquí puedes consultar las mecánicas principales de la nueva edición 2024, reglas de buena conviencia populares en la mesa (Hard Limits) y reglas Homebrew que usamos</p>
             <HorizontalNonLinearStepper steps={steps} activeStep={activeStep} setActiveStep={setActiveStep}/>
             <div className="cards-container">
                 <RulesControls

@@ -18,11 +18,12 @@ export default function MenuAppBar() {
   const DrawerList = (
     <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
       <List>
-        <MenuLink to='character-sheet'>Character Sheet</MenuLink>
         <MenuLink to='dice'>Throw Dice</MenuLink>
-        <MenuLink to='npc'>NPC tracker</MenuLink>
+        <MenuLink to="distance-converter">Distance Converter</MenuLink>
         <MenuLink to='currency-converter'>Currency Converter</MenuLink>
+        <MenuLink to='npc'>NPC tracker</MenuLink>
         <MenuLink to='rules'>Rules</MenuLink>
+        <MenuLink to='character-sheet'>Character Sheet</MenuLink>
       </List>
     </Box>
   );
