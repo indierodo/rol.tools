@@ -1,5 +1,5 @@
 import {
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider,
 } from "react-router-dom";
 import './style.scss';
@@ -11,7 +11,7 @@ import CurrencyConverter from './routes/CurrencyConverter/CurrencyConverter';
 import Rules from "./routes/Rules/Rules.jsx";
 
 const Router = () => {
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
       path: "/",
       element: <Root />,
