@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 import HorizontalNonLinearStepper from '../../components/Stepper';
-import useRulesPagination from '../../hooks/useRulesPagination';
 import useBackgroundImage from '../../hooks/UseBackground';
+import useRulesPagination from '../../hooks/useRulesPagination';
 import RulesControls from '../../components/RuleCards/RulesControls';
 import RulesPagination from '../../components/RuleCards/RulesPagination';
 import MedievalCard from '../../components/MedievalCard/MedievalCard';
