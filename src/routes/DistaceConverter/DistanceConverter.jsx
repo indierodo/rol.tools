@@ -93,7 +93,7 @@ const DistanceConverter = () => {
         ));
 
     return (
-        <Card sx={{bgcolor: 'rgba(7,44,189,0.4)'}}>
+        <Card>
             <Box sx={{ p: 4, maxWidth: 700, mx: 'auto' }}>
                 <Typography variant="h4" gutterBottom>
                     Conversor de Distancias

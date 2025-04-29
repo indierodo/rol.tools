@@ -23,7 +23,7 @@ const theme = createTheme({
     },
     background: {
       default: '#9c7e54',
-      paper: '#d8b572',
+      paper: '#a38458',
     },
   },
 });
