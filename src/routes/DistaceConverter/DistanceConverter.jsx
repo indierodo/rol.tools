@@ -9,8 +9,10 @@ import {
     Box,
     InputLabel,
     FormControl,
-    Card
+    Card,
+    ThemeProvider
 } from '@mui/material';
+import theme from './Theme';
 
 const unitConversions = {
     metros: 1,
@@ -24,9 +26,9 @@ const unitConversions = {
 
 const timeConversions = {
     segundos: 1,
-    minutos: 1 / 60,
-    horas: 1 / 3600,
-    dias: 1 / 86400
+    minutos: 60,
+    horas: 3600,
+    dias: 86400
 };
 
 const DistanceConverter = () => {
@@ -66,9 +68,9 @@ const DistanceConverter = () => {
 
     useEffect(() => {
         const distanceInMeters = travelDistance / unitConversions[travelUnit];
-        const speedInMetersPerSecond =
-            (speedDistance / unitConversions[speedUnit]) /
-            (speedTime * timeConversions[speedTimeUnit]);
+        const speedInMeters = speedDistance / unitConversions[speedUnit];
+        const timeInSeconds = speedTime * timeConversions[speedTimeUnit];
+        const speedInMetersPerSecond = speedInMeters / timeInSeconds;
 
         if (speedInMetersPerSecond > 0) {
             const totalTimeSeconds = distanceInMeters / speedInMetersPerSecond;
@@ -93,109 +95,114 @@ const DistanceConverter = () => {
         ));
 
     return (
-        <Card sx={{bgcolor: 'rgba(7,44,189,0.4)'}}>
-            <Box sx={{ p: 4, maxWidth: 700, mx: 'auto' }}>
-                <Typography variant="h4" gutterBottom>
-                    Conversor de Distancias
-                </Typography>
+        <ThemeProvider theme={theme}>
+            <Card  sx={{bgcolor: 'rgba(7,44,189,0.4)'}}>
+                <Box sx={{ p: 4, maxWidth: 700, mx: 'auto' }}>
+                    <Typography variant="h4" gutterBottom>
+                        Conversor de Distancias
+                    </Typography>
 
-                <Grid container spacing={2}>
-                    {Object.keys(distances).map((unit) => (
-                        <Grid item xs={12} sm={6} md={4} key={unit}>
+                    <Grid container spacing={2}>
+                        {Object.keys(distances).map((unit) => (
+                            <Grid item xs={12} sm={6} md={4} key={unit}>
+                                <TextField
+                                    label={unit.charAt(0).toUpperCase() + unit.slice(1)}
+                                    type="number"
+                                    fullWidth
+                                    value={distances[unit]}
+                                    onChange={(e) => handleDistanceChange(unit, e.target.value)}
+                                />
+                            </Grid>
+                        ))}
+                    </Grid>
+
+                    <Divider sx={{ my: 4 }} />
+
+                    <Typography variant="h5" gutterBottom>
+                        Tiempo de Viaje
+                    </Typography>
+
+                    <Grid container spacing={2}>
+                        <Grid item xs={12} sm={6}>
                             <TextField
-                                label={unit.charAt(0).toUpperCase() + unit.slice(1)}
+                                label="Distancia a Recorrer"
                                 type="number"
                                 fullWidth
-                                value={distances[unit]}
-                                onChange={(e) => handleDistanceChange(unit, e.target.value)}
+                                value={travelDistance}
+                                onChange={(e) => setTravelDistance(parseFloat(e.target.value))}
                             />
                         </Grid>
-                    ))}
-                </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <FormControl fullWidth>
+                                <InputLabel>Unidad</InputLabel>
+                                <Select
+                                    value={travelUnit}
+                                    label="Unidad"
+                                    onChange={(e) => setTravelUnit(e.target.value)}
+                                >
+                                    {renderUnitOptions()}
+                                </Select>
+                            </FormControl>
+                        </Grid>
 
-                <Divider sx={{ my: 4 }} />
+                        <Grid item xs={12} sm={4}>
+                            <TextField
+                                label="Recorrido por tiempo"
+                                type="number"
+                                fullWidth
+                                value={speedDistance}
+                                onChange={(e) => setSpeedDistance(parseFloat(e.target.value))}
+                            />
+                        </Grid>
+                        <Grid item xs={12} sm={4}>
+                            <FormControl fullWidth>
+                                <InputLabel>Unidad de Distancia</InputLabel>
+                                <Select
+                                    value={speedUnit}
+                                    label="Unidad de Distancia"
+                                    onChange={(e) => setSpeedUnit(e.target.value)}
+                                >
+                                    {renderUnitOptions()}
+                                </Select>
+                            </FormControl>
+                        </Grid>
+                        <Grid item xs={6} sm={2}>
+                            <TextField
+                                label="Tiempo"
+                                type="number"
+                                fullWidth
+                                value={speedTime}
+                                onChange={(e) => setSpeedTime(parseFloat(e.target.value))}
+                            />
+                        </Grid>
+                        <Grid item xs={6} sm={2}>
+                            <FormControl fullWidth>
+                                <InputLabel>Unidad de Tiempo</InputLabel>
+                                <Select
+                                    value={speedTimeUnit}
+                                    label="Unidad de Tiempo"
+                                    onChange={(e) => setSpeedTimeUnit(e.target.value)}
+                                >
+                                    {renderTimeOptions()}
+                                </Select>
+                            </FormControl>
+                        </Grid>
+                    </Grid>
 
-                <Typography variant="h5" gutterBottom>
-                    Tiempo de Viaje
-                </Typography>
-
-                <Grid container spacing={2}>
-                    <Grid item xs={12} sm={6}>
-                        <TextField
-                            label="Distancia a Recorrer"
-                            type="number"
-                            fullWidth
-                            value={travelDistance}
-                            onChange={(e) => setTravelDistance(parseFloat(e.target.value))}
-                        />
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                        <FormControl fullWidth>
-                            <InputLabel>Unidad</InputLabel>
-                            <Select
-                                value={travelUnit}
-                                label="Unit"
-                                onChange={(e) => setTravelUnit(e.target.value)}
-                            >
-                                {renderUnitOptions()}
-                            </Select>
-                        </FormControl>
-                    </Grid>
-
-                    <Grid item xs={12} sm={4}>
-                        <TextField
-                            label="Recorrido por tiempo"
-                            type="number"
-                            fullWidth
-                            value={speedDistance}
-                            onChange={(e) => setSpeedDistance(parseFloat(e.target.value))}
-                        />
-                    </Grid>
-                    <Grid item xs={12} sm={4}>
-                        <FormControl fullWidth>
-                            <InputLabel>Unidad de Distancia</InputLabel>
-                            <Select
-                                value={speedUnit}
-                                label="Unidad de Distancia"
-                                onChange={(e) => setSpeedUnit(e.target.value)}
-                            >
-                                {renderUnitOptions()}
-                            </Select>
-                        </FormControl>
-                    </Grid>
-                    <Grid item xs={6} sm={2}>
-                        <TextField
-                            label="Tiempo"
-                            type="number"
-                            fullWidth
-                            value={speedTime}
-                            onChange={(e) => setSpeedTime(parseFloat(e.target.value))}
-                        />
-                    </Grid>
-                    <Grid item xs={6} sm={2}>
-                        <FormControl fullWidth>
-                            <InputLabel>Time Unit</InputLabel>
-                            <Select
-                                value={speedTimeUnit}
-                                label="Unidad de Tiempo"
-                                onChange={(e) => setSpeedTimeUnit(e.target.value)}
-                            >
-                                {renderTimeOptions()}
-                            </Select>
-                        </FormControl>
-                    </Grid>
-                </Grid>
-
-                <Box sx={{ mt: 3 }}>
-                    <Typography variant="h6">
-                        Tiempo Estimado:{' '}
-                        {timeRequired !== null
-                            ? `${(timeRequired / 60).toFixed(2)} Minutos (${timeRequired.toFixed(2)} Segundos)`
-                            : 'Velocidad Inválida'}
-                    </Typography>
+                    <Box sx={{ mt: 3 }}>
+                        <Typography variant="h6">
+                            Tiempo Estimado:{' '}
+                            {timeRequired !== null
+                                ? `${(timeRequired / 60).toFixed(2)} Minutos (${timeRequired.toFixed(2)} Segundos)` +
+                                    (timeRequired >= 3600
+                                        ? ` ≈ ${(timeRequired / 3600).toFixed(2)} Horas`
+                                        : '')
+                                : 'Velocidad Inválida'}
+                        </Typography>
+                    </Box>
                 </Box>
-            </Box>
-        </Card>
+            </Card>
+        </ThemeProvider>
     );
 };
 

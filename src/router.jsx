@@ -10,6 +10,7 @@ import NPCs from './routes/NPCs/NPCs'
 import CurrencyConverter from './routes/CurrencyConverter/CurrencyConverter';
 import Rules from "./routes/Rules/Rules.jsx";
 import DistanceConverter from "./routes/DistaceConverter/DistanceConverter.jsx";
+// import DnDCardForm from "./components/GraveCard/DnDCardForm.jsx";
 
 const Router = () => {
   const router = createHashRouter([
@@ -22,6 +23,7 @@ const Router = () => {
           errorElement: <ErrorPage />,
           children: [
             { index: true, element: <TirarDados /> },
+            // { index: true, element: <DnDCardForm/>},
             { path: "npc", element: <NPCs /> },
             { path: "currency-converter", element: <CurrencyConverter /> },
             { path: "distance-converter", element: <DistanceConverter /> },
