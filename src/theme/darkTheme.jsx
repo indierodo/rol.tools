@@ -1,14 +1,24 @@
 import { createTheme } from '@mui/material/styles';
 
-const theme = createTheme({
+const darkTheme = createTheme({
     palette: {
         mode: 'dark',
         primary: {
-            main: 'rgba(250,250,250,0.8)',
+            main: '#072cbd',
+        },
+        secondary: {
+            main: '#280e3d',
+        },
+        background: {
+            default: '#121212',
+            paper: '#1e1e1e',
         },
         text: {
-            primary: 'rgba(250,250,250,0.8)',
+            primary: '#ffffff',
         },
+    },
+    typography: {
+        fontFamily: "'Oldenburg', serif",
     },
     components: {
         MuiInputLabel: {
@@ -59,4 +69,4 @@ const theme = createTheme({
     },
 });
 
-export default theme
+export default darkTheme;

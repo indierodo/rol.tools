@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import HorizontalNonLinearStepper from '../../components/Stepper';
 import useBackgroundImage from '../../hooks/useBackground';
@@ -12,12 +12,24 @@ import HbIcon from '../../img/icono-homebrew.png'
 import Bg from '../../img/InkForest.png';
 import rules from './rules';
 import './Rules.scss';
+import { useThemeMode } from '../../context/ThemeContext';
 
 const Rules = () => {
+    const { setTheme } = useThemeMode();
     useBackgroundImage(Bg);
     const [activeStep, setActiveStep] = useState(0);
     const types = ['mechanic', 'coexistence', 'homebrew'];
     const steps = ['Mecánicas', 'Convivencia', 'Homebrew'];
+
+    useEffect(() => {
+        setTheme('light')
+
+    
+        // Al desmontarse, volver al modo anterior (claro)
+        return () => {
+            setTheme('dark')
+        };
+    }, [setTheme]);
 
     const {
         currentCards,

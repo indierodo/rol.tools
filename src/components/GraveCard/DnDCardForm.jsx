@@ -15,7 +15,7 @@ import {
     CustomRadio,
     CustomSelect,
     CustomTextField
-} from './DnDCard'
+} from '../CustomElements/DnDCard'
 // import styles from "./DnDCardForm.module.scss";
 
 const theme = createTheme({
